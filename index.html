@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="clock-card">
+            <div class="hours-container">
+                <h1 class="hours time"></h1>
+                <p class="hours-label label">HOURS</p>
+            </div>
+            <h1 class="seperator">:</h1>
+            <div class="minutes-container">
+                <h1 class="minutes time"></h1>
+                <p class="minutes-label label">MINS</p>
+            </div>
+            <h1 class="seperator">:</h1>
+            <div class="sec-container">
+                <h1 class="sec time"></h1>
+                <p class="sec-label label">SEC</p>
+            </div>
+        </div>
+
+        <script>
+            function updateTime() {
+                const time = new Date();
+
+                const hours = document.querySelector(".hours");
+                hours.innerHTML = time.getHours();
+
+                const minutes = document.querySelector(".minutes");
+                minutes.innerHTML = time.getMinutes();
+
+                const sec = document.querySelector(".sec");
+                sec.innerHTML = time.getSeconds();
+            }
+
+            setInterval(updateTime, 200);
+        </script>
+    </body>
+</html>
